@@ -3,7 +3,7 @@
 A fully self-contained, real-time handwritten digit recognition web application. The machine learning model is an MLP (Multi-Layer Perceptron) neural network trained in Python on the MNIST dataset and runs entirely client-side in the browser using raw JavaScript matrix math (zero libraries for inference!).
 
 ## Live Demo
-Deployed on Vercel: [Live Application](https://handwritten-digit-recognition-mlp.vercel.app) *(Note: Replace with your actual deployment link once active!)*
+Deployed on GitHub Pages: [Live Application](https://om-mane-coder.github.io/handwritten-digit-recognition-mlp/)
 
 ## Key Features
 * **Interactive Canvas:** Draw digits directly in the browser with mouse or touch gestures.
