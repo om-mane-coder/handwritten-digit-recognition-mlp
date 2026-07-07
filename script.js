@@ -228,7 +228,7 @@ function debouncedPredict() {
 
 // Initialize application on load
 window.addEventListener('DOMContentLoaded', () => {
-    clearCanvas();
     initConfidenceBars();
+    clearCanvas();
     loadModel();
 });
