@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Digit Recognition - Interactive AI Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <header>
+        <div class="logo">
+            <span class="pulse"></span>
+            <h1>DigitRecognize<span>.ai</span></h1>
+        </div>
+        <div class="tag">Interactive MLP Neural Network</div>
+    </header>
+
+    <main class="container">
+        <!-- Interactive Drawing Panel -->
+        <section class="card draw-section">
+            <div class="card-header">
+                <h2>Drawing Canvas</h2>
+                <p>Draw a single digit (0-9) inside the box below</p>
+            </div>
+            
+            <div class="canvas-container">
+                <canvas id="paintCanvas" width="280" height="280"></canvas>
+            </div>
+            
+            <div class="controls">
+                <button id="clearBtn" class="btn btn-secondary">Clear Canvas</button>
+                <button id="predictBtn" class="btn btn-primary">Predict Digit</button>
+            </div>
+            
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="autoPredict" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Real-time prediction</span>
+            </div>
+        </section>
+
+        <!-- Prediction & Confidence Metrics -->
+        <section class="card results-section">
+            <div class="card-header">
+                <h2>AI Prediction</h2>
+                <p>Output from 3-layer Feedforward Neural Network</p>
+            </div>
+            
+            <div class="prediction-display">
+                <div class="digit-box">
+                    <span id="predictedDigit">-</span>
+                </div>
+                <div class="prediction-meta">
+                    <span class="status-badge" id="modelStatus">Loading Model...</span>
+                    <div class="preview-box">
+                        <canvas id="previewCanvas" width="28" height="28"></canvas>
+                        <span>Model Input (28x28)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confidence-container">
+                <h3>Confidence Scores</h3>
+                <div id="confidenceBars" class="bars-grid">
+                    <!-- Javascript will generate 0-9 bars here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="info-section container">
+        <div class="card info-card">
+            <h3>Architecture Details</h3>
+            <div class="grid-details">
+                <div class="detail-item">
+                    <span class="label">Input Layer</span>
+                    <span class="val">784 Neurons (28x28 normalized)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Hidden Layer 1</span>
+                    <span class="val">128 Neurons (ReLU)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Hidden Layer 2</span>
+                    <span class="val">64 Neurons (ReLU)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Output Layer</span>
+                    <span class="val">10 Neurons (Softmax)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Accuracy</span>
+                    <span class="val accent">96.48% (MNIST test set)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Engine</span>
+                    <span class="val">Pure Vanilla JavaScript (No libraries)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Om Ramesh Mane. Built for UBS Summer Internship Program Portfolio.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
